@@ -1,0 +1,14 @@
+{
+  "name": "multi-text-edit",
+  "version": "1.0.0",
+  "description": "A collabrative text editor",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Michael Van Der Velden",
+  "license": "UNLICENCED",
+  "dependencies": {
+    "ws": "^7.3.1"
+  }
+}
