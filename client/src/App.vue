@@ -45,10 +45,19 @@ export default {
       const key = e.keyCode || e.charCode;
       if (key === 8 || key === 46) {
         this.text = this.text.slice(0, this.cursor[0]) + this.text.slice(this.cursor[1]);
+        const location = this.cursor[0] - 1;
+        this.cursor[1] = location;
+        this.cursor[0] = location;
       } else if (key === 13) {
         this.text = `${this.text.slice(0, this.cursor[0])}\n${this.text.slice(this.cursor[1])}`;
+        const location = this.cursor[0] + 1;
+        this.cursor[1] = location;
+        this.cursor[0] = location;
       } else if (key === 32) {
         this.text = `${this.text.slice(0, this.cursor[0])} ${this.text.slice(this.cursor[1])}`;
+        const location = this.cursor[0] + 1;
+        this.cursor[1] = location;
+        this.cursor[0] = location;
       } else if (key === 20) {
         this.capsLock = !this.capsLock;
       } else {
@@ -58,6 +67,9 @@ export default {
           : String.fromCharCode(key).toLowerCase()
         )
         + this.text.slice(this.cursor[1]);
+        const location = this.cursor[0] + 1;
+        this.cursor[1] = location;
+        this.cursor[0] = location;
       }
       this.updateText();
     },
