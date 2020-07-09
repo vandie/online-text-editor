@@ -47,6 +47,10 @@ export default {
         this.text = this.text.slice(0, this.cursor[0]) + this.text.slice(this.cursor[1]);
       } else if (key === 13) {
         this.text = `${this.text.slice(0, this.cursor[0])}\n${this.text.slice(this.cursor[1])}`;
+      } else if (key === 32) {
+        this.text = `${this.text.slice(0, this.cursor[0])} ${this.text.slice(this.cursor[1])}`;
+      } else if (key === 20) {
+        this.capsLock = !this.capsLock;
       } else {
         this.text = this.text.slice(0, this.cursor[0])
         + (this.capsLock
